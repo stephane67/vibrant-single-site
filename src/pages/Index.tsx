@@ -60,14 +60,23 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen antialiased bg-slate-950 text-white">
-      <Navbar />
-      <Hero />
-      <Features />
-      <Pricing />
-      <Testimonials />
-      <CTA />
-      <Footer />
+    <div className="min-h-screen antialiased bg-slate-950 text-white relative">
+      {/* Neural network-inspired background patterns */}
+      <div className="absolute inset-0 neural-bg opacity-70 pointer-events-none"></div>
+      
+      {/* Circuit patterns */}
+      <div className="absolute inset-0 circuit-pattern opacity-20 pointer-events-none"></div>
+      
+      {/* Content */}
+      <div className="relative z-10">
+        <Navbar />
+        <Hero />
+        <Features />
+        <Pricing />
+        <Testimonials />
+        <CTA />
+        <Footer />
+      </div>
     </div>
   );
 };

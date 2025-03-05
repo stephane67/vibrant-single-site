@@ -86,42 +86,190 @@
 }
 
 @layer components {
+  /* Updated glass effect with more tech feel */
   .glass-effect {
-    @apply bg-white/10 backdrop-blur-md border border-white/10 shadow-sm;
+    @apply bg-slate-900/80 backdrop-blur-md border border-blue-500/20 shadow-sm;
+    box-shadow: 0 4px 30px rgba(0, 34, 255, 0.1), 0 0 20px rgba(0, 149, 255, 0.05) inset;
   }
   
+  /* Updated card with cybernetic design */
   .glass-card {
-    @apply bg-slate-800/80 backdrop-blur-md border border-slate-700/50 shadow-md rounded-xl transition-all duration-300 hover:shadow-lg hover:border-slate-600/50;
+    @apply bg-slate-900/90 backdrop-blur-md border border-blue-500/20 shadow-md rounded-xl transition-all duration-300;
+    box-shadow: 0 8px 32px rgba(0, 34, 255, 0.1), 0 0 8px rgba(0, 149, 255, 0.1) inset;
+    position: relative;
+    overflow: hidden;
   }
   
+  /* Add tech pattern to cards */
+  .glass-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+      linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px),
+      linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px);
+    background-size: 100%, 20px 20px, 20px 20px;
+    background-position: 0 0, 0 0, 0 0;
+    opacity: 0.5;
+    z-index: -1;
+  }
+  
+  /* Add hover effect to cards */
+  .glass-card:hover {
+    @apply border-blue-400/30;
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 34, 255, 0.15), 0 0 12px rgba(0, 149, 255, 0.15) inset;
+  }
+  
+  /* Electric border effect on hover */
+  .glass-card:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border: 1px solid transparent;
+    border-image: linear-gradient(135deg, rgba(59, 130, 246, 0.7), rgba(147, 51, 234, 0.7), rgba(59, 130, 246, 0.7)) 1;
+    border-radius: 0.75rem;
+    animation: borderGlow 2s infinite linear;
+  }
+  
+  @keyframes borderGlow {
+    0% {
+      border-image: linear-gradient(135deg, rgba(59, 130, 246, 0.7), rgba(147, 51, 234, 0.7), rgba(59, 130, 246, 0.7)) 1;
+    }
+    50% {
+      border-image: linear-gradient(135deg, rgba(147, 51, 234, 0.7), rgba(59, 130, 246, 0.7), rgba(147, 51, 234, 0.7)) 1;
+    }
+    100% {
+      border-image: linear-gradient(135deg, rgba(59, 130, 246, 0.7), rgba(147, 51, 234, 0.7), rgba(59, 130, 246, 0.7)) 1;
+    }
+  }
+  
+  /* Tech-inspired scale effect */
   .hover-scale {
-    @apply transition-transform duration-300 hover:scale-[1.02];
+    @apply transition-all duration-300 hover:scale-[1.02];
+    position: relative;
+    z-index: 1;
   }
   
+  .hover-scale::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(59, 130, 246, 0), rgba(59, 130, 246, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+    border-radius: inherit;
+  }
+  
+  .hover-scale:hover::before {
+    opacity: 1;
+  }
+  
+  /* Tech-focused primary button */
   .btn-primary {
-    @apply px-6 py-3 bg-blue-600 text-white rounded-md font-medium shadow-md hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300 hover:translate-y-[-2px] hover:bg-blue-700;
+    @apply px-6 py-3 bg-blue-600 text-white rounded-md font-medium shadow-md transition-all duration-300 relative overflow-hidden;
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
   }
   
+  .btn-primary:hover {
+    @apply shadow-lg shadow-blue-500/20 -translate-y-[2px];
+    background: linear-gradient(135deg, #1d4ed8, #2563eb);
+  }
+  
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.7s ease;
+  }
+  
+  .btn-primary:hover::before {
+    left: 100%;
+  }
+  
+  /* Tech-focused secondary button */
   .btn-secondary {
-    @apply px-6 py-3 bg-slate-800 text-slate-200 rounded-md font-medium shadow-sm hover:shadow-md transition-all duration-300 border border-slate-700 hover:bg-slate-700;
+    @apply px-6 py-3 bg-slate-800 text-slate-200 rounded-md font-medium transition-all duration-300 border border-slate-700 relative overflow-hidden;
   }
   
+  .btn-secondary:hover {
+    @apply bg-slate-700 shadow-md;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.3), 0 0 0 1px rgba(59, 130, 246, 0.3);
+  }
+  
+  .btn-secondary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+    transition: left 0.7s ease;
+  }
+  
+  .btn-secondary:hover::before {
+    left: 100%;
+  }
+  
+  /* Section container with tech grid pattern */
   .section-container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 py-24;
+    @apply max-w-7xl mx-auto px-4 sm:px-6 py-24 relative;
   }
   
+  .section-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.03) 0%, transparent 70%),
+      radial-gradient(circle at 80% 70%, rgba(147, 51, 234, 0.03) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+  }
+  
+  /* Headings with tech style */
   .heading-xl {
     @apply text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight;
+    background: linear-gradient(to right, #fff, #94a3b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   
   .heading-lg {
     @apply text-3xl sm:text-4xl font-bold tracking-tight;
+    background: linear-gradient(to right, #fff, #94a3b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   
   .heading-md {
     @apply text-2xl sm:text-3xl font-bold;
+    background: linear-gradient(to right, #fff, #94a3b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   
+  /* Slide-in animation for sections */
   .slide-in-section > * {
     @apply opacity-0 translate-y-4 transition-all duration-700;
   }
@@ -155,7 +303,9 @@
 
   /* Data visualization components */
   .data-bar {
-    @apply h-4 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-500;
+    @apply h-4 rounded-full transition-all duration-500;
+    background: linear-gradient(90deg, #2563eb, #7c3aed);
+    box-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
   }
 
   /* Tech pattern backgrounds */
@@ -170,5 +320,72 @@
       linear-gradient(rgba(59, 130, 246, 0.05) 1px, transparent 1px);
     background-size: 20px 20px;
   }
+  
+  /* Neon glow effects for highlights */
+  .neon-blue {
+    text-shadow: 0 0 5px rgba(59, 130, 246, 0.8), 0 0 10px rgba(59, 130, 246, 0.5);
+  }
+  
+  .neon-purple {
+    text-shadow: 0 0 5px rgba(147, 51, 234, 0.8), 0 0 10px rgba(147, 51, 234, 0.5);
+  }
+  
+  /* Neural network visualization backgrounds */
+  .neural-bg {
+    background-image: 
+      radial-gradient(circle at 10% 10%, rgba(59, 130, 246, 0.1) 0%, transparent 20%),
+      radial-gradient(circle at 30% 40%, rgba(147, 51, 234, 0.1) 0%, transparent 25%),
+      radial-gradient(circle at 70% 60%, rgba(59, 130, 246, 0.1) 0%, transparent 30%),
+      radial-gradient(circle at 90% 90%, rgba(147, 51, 234, 0.1) 0%, transparent 25%);
+  }
+  
+  /* Tech feature icon containers */
+  .tech-icon-container {
+    @apply h-12 w-12 rounded-lg flex items-center justify-center mb-5 relative overflow-hidden;
+    background: linear-gradient(135deg, rgba(30, 64, 175, 0.2), rgba(30, 58, 138, 0.4));
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
+  }
+  
+  .tech-icon-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(transparent, rgba(59, 130, 246, 0.1), transparent 30%);
+    animation: rotate 6s linear infinite;
+  }
+  
+  @keyframes rotate {
+    100% {
+      transform: rotate(1turn);
+    }
+  }
+  
+  /* Code block styling */
+  .code-block {
+    @apply font-mono text-sm rounded-md p-4 bg-slate-900 border border-slate-700 overflow-x-auto;
+  }
+  
+  /* Cyberpunk-inspired card border */
+  .cyber-border {
+    position: relative;
+  }
+  
+  .cyber-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: 0.75rem;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6, #3b82f6);
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
 }
-
