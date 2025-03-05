@@ -1,37 +1,61 @@
 
 import { useEffect, useRef } from 'react';
-import { LineChart, BarChart, PieChart, Zap, Shield, Users, Clock, Target, Workflow } from 'lucide-react';
+import { Check, AlertTriangle, ArrowRight, Users, Clock, Target, Workflow } from 'lucide-react';
 
-const features = [
+const painPoints = [
   {
-    icon: <LineChart size={24} className="text-blue-400" />,
-    title: "Advanced Analytics",
-    description: "Gain valuable insights with our powerful analytics tools. Track growth and make data-driven decisions."
+    icon: <AlertTriangle size={24} className="text-amber-400" />,
+    title: "Vous",
+    description: "Vous avez l'impression que vos sales perdent beaucoup de temps sur des tâches manuelles"
   },
   {
-    icon: <Shield size={24} className="text-blue-400" />,
-    title: "Secure Infrastructure",
-    description: "Enterprise-grade security protocols to protect your data. Your business security is our priority."
+    icon: <AlertTriangle size={24} className="text-amber-400" />,
+    title: "Vous",
+    description: "Vous avez l'impression que marketing et sales ne sont pas alignés"
   },
   {
-    icon: <Zap size={24} className="text-blue-400" />,
-    title: "Lightning Fast",
-    description: "Optimized performance for seamless operations. Speed up your workflow and save valuable time."
+    icon: <AlertTriangle size={24} className="text-amber-400" />,
+    title: "Vous",
+    description: "Vous avez l'impression que plus de choses pourraient être faites sur le suivi client"
   },
   {
-    icon: <BarChart size={24} className="text-blue-400" />,
-    title: "Growth Tracking",
-    description: "Monitor your business metrics in real-time. Set goals and visualize your progress effortlessly."
+    icon: <AlertTriangle size={24} className="text-amber-400" />,
+    title: "Vous",
+    description: "Vous avez l'impression que des opportunités sont laissées à l'abandon"
+  },
+];
+
+const technicalSkills = [
+  {
+    title: "Modélisation de données",
+    description: "Conception et gestion de bases de données – SQL."
   },
   {
-    icon: <Clock size={24} className="text-blue-400" />,
-    title: "Time Saving",
-    description: "Automate repetitive tasks and focus on what matters. Reclaim hours of your workday with smart automation."
+    title: "APIs et formats de données",
+    description: "Intégration d'APIs (REST, JSON) et gestion des flux d'information."
   },
   {
-    icon: <Users size={24} className="text-blue-400" />,
-    title: "Team Collaboration",
-    description: "Seamless communication and project management tools to keep your team synchronized and productive."
+    title: "Automatisation",
+    description: "Conception de workflows et automatisations avec ou sans code (Make, N8N, scripting)"
+  },
+  {
+    title: "IA",
+    description: "Créations d'agents IA sur mesure"
+  }
+];
+
+const businessSkills = [
+  {
+    title: "Marketing – Copywriting",
+    description: "User research, élaboration de messages efficaces et ciblés pour attirer des prospects."
+  },
+  {
+    title: "Collaboration",
+    description: "Coordination inter-équipes et traduction des enjeux techniques en solutions métiers."
+  },
+  {
+    title: "Analyse",
+    description: "Optimisation des processus et exploitation des données pour guider les décisions."
   }
 ];
 
@@ -70,22 +94,19 @@ const Features = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="slide-in-section text-center mb-16">
           <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-500/10 text-blue-400 mb-4 border border-blue-500/20">
-            Features
+            Problématiques
           </span>
-          <h2 className="heading-lg mb-4">Everything you need in one place</h2>
-          <p className="text-blue-100/70 text-lg max-w-2xl mx-auto">
-            Our comprehensive suite of AI-powered tools will help you streamline operations and focus on growth
-          </p>
+          <h2 className="heading-lg mb-4">Bref, vous avez l'impression qu'il manque un engrenage à votre entreprise</h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 slide-in-section" ref={sectionRef}>
-          {features.map((feature, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 slide-in-section" ref={sectionRef}>
+          {painPoints.map((point, index) => (
             <div key={index} className="glass-card p-6 hover-scale cyber-border">
               <div className="tech-icon-container">
-                {feature.icon}
+                {point.icon}
               </div>
-              <h3 className="text-xl font-semibold mb-3 neon-blue">{feature.title}</h3>
-              <p className="text-blue-100/70">{feature.description}</p>
+              <h3 className="text-xl font-semibold mb-3 neon-blue">{point.title}</h3>
+              <p className="text-blue-100/70">{point.description}</p>
             </div>
           ))}
         </div>
@@ -122,33 +143,19 @@ const Features = () => {
                 </div>
                 
                 <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-500/10 text-blue-400 mb-4 border border-blue-500/20">
-                  Workflow
+                  La réalité
                 </span>
-                <h2 className="heading-md mb-4">Streamlined process for maximum efficiency</h2>
+                <h2 className="heading-md mb-4">Vos équipes pourraient être plus efficaces</h2>
                 <p className="text-blue-100/70 mb-6">
-                  Our AI-powered workflow system reduces complexity and boosts productivity. Experience a seamless journey from ideation to execution with our carefully designed process.
+                  Beaucoup pensent que la seule façon de développer leur chiffre d'affaire est de recruter plus de commerciaux, ou d'investir davantage en marketing.
                 </p>
-                <ul className="space-y-3 mb-8">
-                  <li className="flex items-center">
-                    <div className="h-6 w-6 rounded-full bg-blue-900/50 flex items-center justify-center mr-3 border border-blue-500/30">
-                      <Target size={14} className="text-blue-400" />
-                    </div>
-                    <span className="text-blue-100">Set clear objectives and targets</span>
-                  </li>
-                  <li className="flex items-center">
-                    <div className="h-6 w-6 rounded-full bg-blue-900/50 flex items-center justify-center mr-3 border border-blue-500/30">
-                      <Workflow size={14} className="text-blue-400" />
-                    </div>
-                    <span className="text-blue-100">Automate repetitive workflows</span>
-                  </li>
-                  <li className="flex items-center">
-                    <div className="h-6 w-6 rounded-full bg-blue-900/50 flex items-center justify-center mr-3 border border-blue-500/30">
-                      <PieChart size={14} className="text-blue-400" />
-                    </div>
-                    <span className="text-blue-100">Analyze results with rich visualizations</span>
-                  </li>
-                </ul>
-                <a href="#contact" className="btn-primary inline-flex self-start">Learn More</a>
+                <p className="text-blue-100/70 mb-6">
+                  Mais les temps ont changé. Avec les bons outils, les bons process et les bonnes stratégies il est possible d'avoir plus de résultats, avec moins d'employés.
+                </p>
+                <a href="#contact" className="btn-primary inline-flex self-start">
+                  Échanger 15 min avec moi
+                  <ArrowRight size={18} className="ml-2" />
+                </a>
               </div>
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-transparent to-transparent z-10 pointer-events-none"></div>
@@ -161,9 +168,44 @@ const Features = () => {
                 <div className="absolute bottom-4 right-4 glass-effect p-2 rounded-md text-xs font-mono text-blue-300 z-20">
                   <div className="flex items-center">
                     <span className="block w-2 h-2 rounded-full bg-green-400 mr-2 animate-pulse"></span>
-                    AI Processing: 98% Complete
+                    Growth Processing: 98% Complete
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div className="mt-20 slide-in-section">
+          <div className="text-center mb-16">
+            <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-500/10 text-blue-400 mb-4 border border-blue-500/20">
+              Compétences
+            </span>
+            <h2 className="heading-lg mb-4">Mes compétences</h2>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 className="text-xl font-semibold mb-6 text-blue-400">(techniques)</h3>
+              <div className="space-y-6">
+                {technicalSkills.map((skill, index) => (
+                  <div key={index} className="glass-card p-6 cyber-border">
+                    <h4 className="text-lg font-medium mb-2 text-blue-300">{skill.title}</h4>
+                    <p className="text-blue-100/70">{skill.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <div>
+              <h3 className="text-xl font-semibold mb-6 text-blue-400">(non techniques)</h3>
+              <div className="space-y-6">
+                {businessSkills.map((skill, index) => (
+                  <div key={index} className="glass-card p-6 cyber-border">
+                    <h4 className="text-lg font-medium mb-2 text-blue-300">{skill.title}</h4>
+                    <p className="text-blue-100/70">{skill.description}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

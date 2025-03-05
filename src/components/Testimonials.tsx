@@ -4,25 +4,53 @@ import { Star } from 'lucide-react';
 
 const testimonials = [
   {
-    quote: "This AI platform has completely transformed our workflow. The intuitive interface and powerful features have increased our productivity by 40%.",
-    author: "Sarah Johnson",
-    position: "CTO, TechFlow Inc.",
+    quote: "Stéphane m'a aidé a développer mon réseau de partenaires et de revendeurs. Un gros billet à l'entrée, mais il a plus que surpassé mes attentes au niveau des résultats. Allez-y les yeux fermés",
+    author: "Joseph Basquin",
+    position: "Fondateur- Yellow Noise Audio",
     rating: 5,
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80"
   },
   {
-    quote: "The ML analytics capabilities alone are worth the investment. We've gained invaluable insights that have helped us make smarter business decisions.",
-    author: "Michael Chen",
-    position: "CEO, Innovate Solutions",
+    quote: "Stéphane est un expert dans son domaine et ses conseils m'ont été très utiles ! Il a toujours 1 ou plusieurs solutions. Toujours sympa et disponible je ne peut que le recommander. 👍🏻 En plus sa newsletter est une véritable pépite !",
+    author: "Mickaël Raynier",
+    position: "Growth manager freelance",
     rating: 5,
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80"
   },
   {
-    quote: "Customer support is exceptional. The AI model customization options are unparalleled, and the team is always open to feedback.",
-    author: "Emily Rodriguez",
-    position: "Operations Manager, Velocity Group",
-    rating: 4,
+    quote: "I had the opportunity to work with Stéphane on two occasions: 1. At PaletteHQ, where I enjoyed reaching out to him within the company to come up with creative outbound strategies to recruit software engineers. He assisted me with copywriting as well as the implementation of tools, which helped me achieve my recruitment goals. 2. At BuddiesHR, as a growth consultant. We had a lot of \"growth\" topics in our backlog and not enough time to implement everything ourselves. That's why we brought Stéphane on board. Thanks to his work, we successfully implemented an internal content library, eliminating the fear of the blank page. We also improved our SEO content at the \"top of the funnel,\" doubling our traffic since then. Finally, what really sets Stéphane apart when working with him is his creativity. He will always find a different way to approach topics and find solutions to your problems!",
+    author: "J.Y Delmotte",
+    position: "6x SaaS Founder • Co-founder @ BuddiesHR.com + KarmaLinks.io",
+    rating: 5,
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1288&q=80"
+  },
+  {
+    quote: "J'ai eu l'occasion de travailler à plusieurs reprises avec Stéphane. La première fois pour gérer le SEO de mon site (qui est passé de 0 traffic à près d1 million de visiteurs annuel). La seconde fois je voulais tester une offre B2B. Stéphane a géré toute la prospection commerciale en paiement \"à la performance\". Résultat : des dizaines de clients potentiels et 2 contrats signés avec des grands groupes en moins d'1 mois 🥳 ! Il a des approches qui sortent des sentiers battus, et je pense que ses résultats en sont grandement liés.",
+    author: "Pauline",
+    position: "Fondatrice @paulinediet.fr",
+    rating: 5,
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80"
+  },
+  {
+    quote: "30 minutes d'une extrême efficacité. Imagination, créativité et ingéniosité. Bravo, vivement recommandé!",
+    author: "Florian Marzo",
+    position: "Vice-Président exécutif Davidson",
+    rating: 5,
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80"
+  },
+  {
+    quote: "Stephane is instrumental in driving the foundation for growth. He brings a sharp mindset and executes with precision. Whether it's identifying new opportunities or optimizing existing processes, he delivers results. If you're looking for someone who can take your growth to the next level, Stephane is the person to have on your team.",
+    author: "Omid Mael",
+    position: "CEO & Co-founder @SecondBody",
+    rating: 5,
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1288&q=80"
+  },
+  {
+    quote: "I worked with Stephane twice and every time I was amazed by the growth ideas Stephane always had. His technical knowledge makes him able to implement all of his ideas and to put complex workflows in place. He helped us at Buddieshr with outbound, top-of-the-funnel SEO, copywriting, automations... I strongly recommend Stephane and would personally work with him again whenever we have the occasion.",
+    author: "Fabien Pinel",
+    position: "Entrepreneur - 6x SaaS startup founder - Co-founder @BuddiesHR & KarmaLinks.io",
+    rating: 5,
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80"
   }
 ];
 
@@ -68,11 +96,11 @@ const Testimonials = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="slide-in-section text-center mb-16">
           <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-500/10 text-blue-400 mb-4 border border-blue-500/20">
-            Testimonials
+            Témoignages
           </span>
-          <h2 className="heading-lg mb-4">What our customers say</h2>
+          <h2 className="heading-lg mb-4">Vos (vrais) avis</h2>
           <p className="text-blue-100/70 text-lg max-w-2xl mx-auto">
-            Don't just take our word for it — hear from some of our amazing AI adopters
+            Découvrez ce que mes clients disent de mon travail
           </p>
         </div>
 
@@ -175,30 +203,26 @@ const Testimonials = () => {
         </div>
 
         <div className="mt-20 text-center slide-in-section">
-          <p className="text-blue-100/70 max-w-3xl mx-auto mb-10 text-lg italic">
-            "Join over <span className="font-semibold text-blue-300 neon-blue">2,000+</span> satisfied customers who have transformed their business with our AI platform"
-          </p>
-          <div className="flex flex-wrap justify-center gap-8 md:gap-16">
-            <div className="flex items-center">
-              <img src="https://tailwindui.com/img/logos/tuple-logo-gray-300.svg" alt="Tuple" className="h-8 opacity-50 hover:opacity-100 transition-opacity" loading="lazy" />
-              <div className="ml-2 h-2 w-2 rounded-full bg-blue-500 animate-pulse"></div>
-            </div>
-            <div className="flex items-center">
-              <img src="https://tailwindui.com/img/logos/mirage-logo-gray-300.svg" alt="Mirage" className="h-8 opacity-50 hover:opacity-100 transition-opacity" loading="lazy" />
-              <div className="ml-2 h-2 w-2 rounded-full bg-blue-500 animate-pulse"></div>
-            </div>
-            <div className="flex items-center">
-              <img src="https://tailwindui.com/img/logos/statickit-logo-gray-300.svg" alt="StaticKit" className="h-8 opacity-50 hover:opacity-100 transition-opacity" loading="lazy" />
-              <div className="ml-2 h-2 w-2 rounded-full bg-blue-500 animate-pulse"></div>
-            </div>
-            <div className="flex items-center">
-              <img src="https://tailwindui.com/img/logos/transistor-logo-gray-300.svg" alt="Transistor" className="h-8 opacity-50 hover:opacity-100 transition-opacity" loading="lazy" />
-              <div className="ml-2 h-2 w-2 rounded-full bg-blue-500 animate-pulse"></div>
-            </div>
-            <div className="flex items-center">
-              <img src="https://tailwindui.com/img/logos/workcation-logo-gray-300.svg" alt="Workcation" className="h-8 opacity-50 hover:opacity-100 transition-opacity" loading="lazy" />
-              <div className="ml-2 h-2 w-2 rounded-full bg-blue-500 animate-pulse"></div>
-            </div>
+          <div className="glass-card p-8 cyber-border">
+            <h3 className="text-2xl font-bold mb-8 text-center">Vous n'avez pas envie de me parler ?</h3>
+            <p className="text-blue-100/70 mb-8">
+              Rejoignez plus de 1000 entreprises sur ma newsletter
+            </p>
+            <form className="max-w-md mx-auto">
+              <div className="flex flex-col sm:flex-row gap-4">
+                <input 
+                  type="email" 
+                  placeholder="Entrez votre email" 
+                  className="flex-1 bg-slate-800/60 border border-slate-700 rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                />
+                <button
+                  type="submit"
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md font-medium transition-colors duration-300"
+                >
+                  S'inscrire
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </div>

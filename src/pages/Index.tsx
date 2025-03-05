@@ -48,8 +48,148 @@ const Index = () => {
       });
     };
 
+    // Create tech grid background
+    const createTechGrid = () => {
+      const techGrids = document.querySelectorAll('.tech-grid');
+      techGrids.forEach(grid => {
+        const gridElement = grid as HTMLElement;
+        gridElement.innerHTML = '';
+        
+        // Create vertical lines
+        for (let i = 0; i < 20; i++) {
+          const line = document.createElement('div');
+          line.style.position = 'absolute';
+          line.style.top = '0';
+          line.style.bottom = '0';
+          line.style.width = '1px';
+          line.style.left = `${5 + i * 5}%`;
+          line.style.background = 'linear-gradient(to bottom, rgba(59, 130, 246, 0.2), transparent)';
+          gridElement.appendChild(line);
+        }
+        
+        // Create horizontal lines
+        for (let i = 0; i < 20; i++) {
+          const line = document.createElement('div');
+          line.style.position = 'absolute';
+          line.style.left = '0';
+          line.style.right = '0';
+          line.style.height = '1px';
+          line.style.top = `${5 + i * 5}%`;
+          line.style.background = 'linear-gradient(to right, rgba(59, 130, 246, 0.2), transparent)';
+          gridElement.appendChild(line);
+        }
+        
+        // Add some nodes at intersections
+        for (let i = 0; i < 10; i++) {
+          const node = document.createElement('div');
+          node.style.position = 'absolute';
+          node.style.width = '4px';
+          node.style.height = '4px';
+          node.style.borderRadius = '50%';
+          node.style.backgroundColor = 'rgba(59, 130, 246, 0.5)';
+          node.style.left = `${Math.random() * 100}%`;
+          node.style.top = `${Math.random() * 100}%`;
+          gridElement.appendChild(node);
+        }
+      });
+    };
+
+    // Create neural background pattern
+    const createNeuralBg = () => {
+      const neuralBgs = document.querySelectorAll('.neural-bg');
+      neuralBgs.forEach(bg => {
+        const bgElement = bg as HTMLElement;
+        bgElement.innerHTML = '';
+        
+        // Create nodes
+        for (let i = 0; i < 30; i++) {
+          const node = document.createElement('div');
+          node.style.position = 'absolute';
+          node.style.width = `${Math.random() * 4 + 2}px`;
+          node.style.height = node.style.width;
+          node.style.borderRadius = '50%';
+          node.style.backgroundColor = 'rgba(59, 130, 246, 0.3)';
+          node.style.left = `${Math.random() * 100}%`;
+          node.style.top = `${Math.random() * 100}%`;
+          bgElement.appendChild(node);
+          
+          // Create connections between nodes
+          for (let j = 0; j < 2; j++) {
+            const connection = document.createElement('div');
+            connection.style.position = 'absolute';
+            connection.style.width = '1px';
+            connection.style.height = `${Math.random() * 100 + 50}px`;
+            connection.style.background = 'linear-gradient(to bottom, rgba(59, 130, 246, 0.2), transparent)';
+            connection.style.left = `${Math.random() * 100}%`;
+            connection.style.top = `${Math.random() * 100}%`;
+            connection.style.transform = `rotate(${Math.random() * 360}deg)`;
+            connection.style.transformOrigin = 'top';
+            bgElement.appendChild(connection);
+          }
+        }
+      });
+    };
+
+    // Create circuit patterns
+    const createCircuitPattern = () => {
+      const circuitPatterns = document.querySelectorAll('.circuit-pattern');
+      circuitPatterns.forEach(pattern => {
+        const patternElement = pattern as HTMLElement;
+        patternElement.innerHTML = '';
+        
+        // Create horizontal lines
+        for (let i = 0; i < 10; i++) {
+          const line = document.createElement('div');
+          line.style.position = 'absolute';
+          line.style.left = '0';
+          line.style.width = `${Math.random() * 30 + 20}%`;
+          line.style.height = '1px';
+          line.style.top = `${Math.random() * 100}%`;
+          line.style.backgroundColor = 'rgba(59, 130, 246, 0.3)';
+          patternElement.appendChild(line);
+          
+          // Add node at the end of line
+          const node = document.createElement('div');
+          node.style.position = 'absolute';
+          node.style.width = '3px';
+          node.style.height = '3px';
+          node.style.borderRadius = '50%';
+          node.style.backgroundColor = 'rgba(59, 130, 246, 0.5)';
+          node.style.left = line.style.width;
+          node.style.top = '-1px';
+          line.appendChild(node);
+        }
+        
+        // Create vertical lines
+        for (let i = 0; i < 10; i++) {
+          const line = document.createElement('div');
+          line.style.position = 'absolute';
+          line.style.top = '0';
+          line.style.height = `${Math.random() * 30 + 20}%`;
+          line.style.width = '1px';
+          line.style.left = `${Math.random() * 100}%`;
+          line.style.backgroundColor = 'rgba(59, 130, 246, 0.3)';
+          patternElement.appendChild(line);
+          
+          // Add node at the end of line
+          const node = document.createElement('div');
+          node.style.position = 'absolute';
+          node.style.width = '3px';
+          node.style.height = '3px';
+          node.style.borderRadius = '50%';
+          node.style.backgroundColor = 'rgba(59, 130, 246, 0.5)';
+          node.style.bottom = '0';
+          node.style.left = '-1px';
+          line.appendChild(node);
+        }
+      });
+    };
+
     setupAnimations();
     setupSmoothScroll();
+    createTechGrid();
+    createNeuralBg();
+    createCircuitPattern();
 
     // Cleanup
     return () => {

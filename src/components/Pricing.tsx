@@ -1,63 +1,59 @@
 
 import { useState, useEffect, useRef } from 'react';
-import { Check } from 'lucide-react';
+import { Check, ArrowRight } from 'lucide-react';
 
 const pricingPlans = [
   {
-    name: "Starter",
-    price: "29",
+    name: "Diagnostic",
+    price: "0",
     period: "monthly",
-    description: "Perfect for individuals and small teams just getting started",
+    description: "Une analyse rapide de vos besoins et problématiques",
     features: [
-      "Up to 5 users",
-      "Basic analytics",
-      "24/7 support",
-      "1 GB storage",
-      "Standard reporting"
+      "Appel de 15 minutes",
+      "Identification des problématiques",
+      "Conseils rapides",
+      "Sans engagement"
     ],
-    cta: "Get Started",
+    cta: "Réserver un appel",
     highlighted: false
   },
   {
-    name: "Professional",
-    price: "79",
+    name: "Coaching",
+    price: "Sur mesure",
     period: "monthly",
-    description: "Ideal for growing businesses with more advanced needs",
+    description: "Pour les entreprises qui veulent aller plus loin dans leur stratégie",
     features: [
-      "Up to 20 users",
-      "Advanced analytics",
-      "Priority support",
-      "10 GB storage",
-      "Custom reports",
-      "API access",
-      "Team collaboration"
+      "Analyse approfondie",
+      "Recommandations personnalisées",
+      "Suivi régulier",
+      "Accès direct",
+      "Accompagnement stratégique",
+      "Transfert de compétences"
     ],
-    cta: "Get Started",
+    cta: "En savoir plus",
     highlighted: true
   },
   {
-    name: "Enterprise",
-    price: "149",
+    name: "Consultant",
+    price: "Sur mesure",
     period: "monthly",
-    description: "Advanced features for larger organizations with complex requirements",
+    description: "Solution complète pour implémentation technique et stratégique",
     features: [
-      "Unlimited users",
-      "Premium analytics",
-      "Dedicated support",
-      "100 GB storage",
-      "Advanced reporting",
-      "API access",
-      "Team collaboration",
-      "Custom integrations",
-      "Advanced security"
+      "Automatisation des processus",
+      "Intégration d'outils",
+      "Développement sur mesure",
+      "Formation des équipes",
+      "Tableau de bord et KPIs",
+      "Optimisation des workflows",
+      "Accompagnement complet",
+      "Résultats mesurables"
     ],
-    cta: "Contact Sales",
+    cta: "Discutons de vos besoins",
     highlighted: false
   }
 ];
 
 const Pricing = () => {
-  const [isMonthly, setIsMonthly] = useState(true);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -92,46 +88,16 @@ const Pricing = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="slide-in-section text-center mb-16">
           <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-500/10 text-blue-400 mb-4 border border-blue-500/20">
-            Pricing
+            Services
           </span>
-          <h2 className="heading-lg mb-4">Simple, transparent pricing</h2>
+          <h2 className="heading-lg mb-4">Comment puis-je vous aider ?</h2>
           <p className="text-blue-100/70 text-lg max-w-2xl mx-auto">
-            Choose the plan that works best for your AI implementation needs
+            Des solutions adaptées à vos besoins en automatisation et croissance
           </p>
-          
-          <div className="flex items-center justify-center mt-8">
-            <div className="bg-slate-800/80 border border-slate-700/50 rounded-full p-1 inline-flex">
-              <button
-                className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
-                  isMonthly ? 'bg-blue-600 text-white shadow-sm' : 'text-blue-100/70'
-                }`}
-                onClick={() => setIsMonthly(true)}
-              >
-                Monthly
-              </button>
-              <button
-                className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
-                  !isMonthly ? 'bg-blue-600 text-white shadow-sm' : 'text-blue-100/70'
-                }`}
-                onClick={() => setIsMonthly(false)}
-              >
-                Annually
-              </button>
-            </div>
-          </div>
-          
-          {!isMonthly && (
-            <div className="mt-4 inline-flex items-center justify-center px-3 py-1 rounded-full text-sm font-medium bg-green-900/50 text-green-400 border border-green-500/30">
-              Save 20% with annual billing
-            </div>
-          )}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 slide-in-section" ref={sectionRef}>
           {pricingPlans.map((plan, index) => {
-            // Calculate the annual price (20% discount)
-            const annualPrice = Math.round(Number(plan.price) * 0.8);
-            
             return (
               <div 
                 key={index} 
@@ -147,7 +113,7 @@ const Pricing = () => {
                 {/* Highlighted plan gets a special effect */}
                 {plan.highlighted && (
                   <div className="absolute -top-3 -right-3 bg-blue-600 rounded-full px-3 py-1 text-xs font-bold shadow-lg border border-blue-500/50">
-                    Most Popular
+                    Recommandé
                   </div>
                 )}
                 
@@ -159,13 +125,14 @@ const Pricing = () => {
                 </div>
                 
                 <div className="flex items-baseline mb-8 relative z-10">
-                  <span className="text-4xl font-bold">$</span>
-                  <span className="text-5xl font-bold">
-                    {isMonthly ? plan.price : annualPrice}
-                  </span>
-                  <span className={`ml-2 ${plan.highlighted ? 'text-blue-200/80' : 'text-blue-100/70'}`}>
-                    /{isMonthly ? 'month' : 'month, billed annually'}
-                  </span>
+                  {plan.price !== "Sur mesure" ? (
+                    <>
+                      <span className="text-4xl font-bold">€</span>
+                      <span className="text-5xl font-bold">{plan.price}</span>
+                    </>
+                  ) : (
+                    <span className="text-4xl font-bold">{plan.price}</span>
+                  )}
                 </div>
                 
                 <ul className="space-y-4 mb-8 relative z-10">
