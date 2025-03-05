@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
   // Set base depending on the environment. In production, set it to your repo name.
-  base: mode === 'development' ? '/' : '/my-project/',
+  base: mode === 'development' ? '/' : '/vibrant-single-site/',
   server: {
     host: "::",
     port: 8080,
