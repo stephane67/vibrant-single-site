@@ -7,33 +7,33 @@
 
 @layer base {
   :root {
-    --background: 210 40% 98%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 221 83% 53%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 221 83% 53%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
 
     --radius: 0.5rem;
   }
@@ -87,11 +87,11 @@
 
 @layer components {
   .glass-effect {
-    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-sm;
+    @apply bg-white/10 backdrop-blur-md border border-white/10 shadow-sm;
   }
   
   .glass-card {
-    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-md rounded-xl transition-all duration-300 hover:shadow-lg;
+    @apply bg-slate-800/80 backdrop-blur-md border border-slate-700/50 shadow-md rounded-xl transition-all duration-300 hover:shadow-lg hover:border-slate-600/50;
   }
   
   .hover-scale {
@@ -99,11 +99,11 @@
   }
   
   .btn-primary {
-    @apply px-6 py-3 bg-primary text-primary-foreground rounded-full font-medium shadow-md hover:shadow-lg transition-all duration-300 hover:translate-y-[-2px];
+    @apply px-6 py-3 bg-blue-600 text-white rounded-md font-medium shadow-md hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300 hover:translate-y-[-2px] hover:bg-blue-700;
   }
   
   .btn-secondary {
-    @apply px-6 py-3 bg-secondary text-secondary-foreground rounded-full font-medium shadow-sm hover:shadow-md transition-all duration-300 border border-border;
+    @apply px-6 py-3 bg-slate-800 text-slate-200 rounded-md font-medium shadow-sm hover:shadow-md transition-all duration-300 border border-slate-700 hover:bg-slate-700;
   }
   
   .section-container {
@@ -136,4 +136,39 @@
   .slide-in-section > *:nth-child(4) { transition-delay: 300ms; }
   .slide-in-section > *:nth-child(5) { transition-delay: 400ms; }
   .slide-in-section > *:nth-child(6) { transition-delay: 500ms; }
+
+  /* Tech-focused animations */
+  .typing-animation {
+    @apply overflow-hidden whitespace-nowrap border-r-2 border-green-400 animate-pulse;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  }
+
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #4ade80 }
+  }
+
+  /* Data visualization components */
+  .data-bar {
+    @apply h-4 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-500;
+  }
+
+  /* Tech pattern backgrounds */
+  .tech-grid {
+    background-image: radial-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  .circuit-pattern {
+    background-image: 
+      linear-gradient(90deg, rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+      linear-gradient(rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
 }
+

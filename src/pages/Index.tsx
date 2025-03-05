@@ -60,7 +60,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen antialiased">
+    <div className="min-h-screen antialiased bg-slate-950 text-white">
       <Navbar />
       <Hero />
       <Features />
